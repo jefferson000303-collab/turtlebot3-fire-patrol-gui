@@ -4,10 +4,10 @@
 > 3인 팀 프로젝트에서 **GUI / 원격제어 파트**를 맡았습니다.
 
 <p align="center">
-  <img src="images/gui_fire_alert.jpg" width="49%" alt="화재 감지 시 관제 GUI 경고 팝업"/>
+  <img src="images/gui_fire_demo.gif" width="49%" alt="화재 경고 확인 후 순찰이 재개되는 관제 GUI 시연"/>
   <img src="images/robot_patrol.jpg" width="49%" alt="순찰 코스를 주행 중인 TurtleBot3"/>
 </p>
-<p align="center"><sub>왼쪽: 화재 감지 시 관제 화면 (상태 LED 적색 전환 + 모달 경고) · 오른쪽: 테스트 코스를 순찰 중인 TurtleBot3</sub></p>
+<p align="center"><sub>왼쪽: 화재 경고 확인 → 순찰 재개 시연 (상태 LED 적색 → 청색) · 오른쪽: 테스트 코스를 순찰 중인 TurtleBot3</sub></p>
 
 ---
 
@@ -133,6 +133,10 @@ self.btn_up.released.connect(lambda: self.sig_cmd_vel.emit(0.0, 0.0))  # 떼면 
 - 모드 전환은 `SetRemoteControl` 서비스로 로봇 측에 요청해, 로봇이 원격 조종 상태로 전환되도록 했습니다.
 
 ### 4. 화재 감지 알림과 순찰 재개 흐름
+
+<p align="center">
+  <img src="images/gui_fire_alert.jpg" width="60%" alt="화재 감지 시 관제 GUI 경고 팝업"/>
+</p>
 
 ```mermaid
 sequenceDiagram
